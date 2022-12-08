@@ -49,8 +49,54 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
   } else {
     alert("Provide valid number");
   }
-  incomeTotal.value = "";
+  //   incomeTotal.value = "";
   foodExpensesInput.value = "";
   rentExpensesInput.value = "";
   clothExpensesInput.value = "";
 });
+
+function saveMoney() {
+  document.getElementById("save-button").addEventListener("click", function() {
+    // console.log("clicked");
+    const saveInput = document.getElementById("save-total");
+    const saveInputValue = parseInt(saveInput.value);
+    // console.log(saveInputValue);
+
+    const incomeTotal = document.getElementById("total-income");
+    const incomeValue = parseInt(incomeTotal.value);
+    // console.log(incomeValue);
+
+    if (
+      incomeValue > 0 &&
+      saveInputValue > 0 &&
+      incomeValue != "" &&
+      saveInputValue != "" &&
+      (typeof incomeValue != "string" && typeof saveInputValue != "string")
+    ) {
+      const save = incomeValue * saveInputValue / 100;
+      // console.log(save);
+
+      const savingAmountField = document.getElementById("saving-amount");
+      const savingAmountText = parseFloat(savingAmountField.innerText);
+      //   console.log(savingAmountText);
+      savingAmountField.innerText = save;
+
+      const totalBalanceField = document.getElementById("remaining-balance");
+      const totalBalanceValue = parseFloat(totalBalanceField.innerText);
+      //   console.log(totalBalanceValue);
+
+      const previousBalance = document.getElementById("total-balance");
+      const totalBalanceText = parseFloat(previousBalance.innerText);
+
+      const remaining = totalBalanceText - save;
+      //   console.log(remaining);
+      totalBalanceField.innerText = remaining;
+    } else {
+      alert("please enter income value");
+    }
+    incomeTotal.value = "";
+    saveInput.value = "";
+  });
+}
+
+saveMoney();
