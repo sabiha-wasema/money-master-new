@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <h1 class="title">Money Master <i class="fa-solid fa-sack-dollar"></i></h1>
-
+    <h1 class="title">Quicken Master <i class="fa-solid fa-sack-dollar"></i></h1>
     <section>
         <div class="money-container">
             <div class="image-container">
@@ -23,19 +22,19 @@
                 <div class="income-section">
                     <div class="income">
                         <h3 class="side-section-title">Income</h3>
-                        <label>Income: <input type="text" name="" id=""></label>
+                        <label>Income: <input type="text" name="" id="total-income"></label>
                     </div>
                     <h3 class="side-title">Expenses</h3>
                     <div class="input-container">
-                        <p>Food: <input type="text" name="" id=""></p>
-                        <p>Rent: <input type="text" name="" id=""></p>
-                        <p>Clothes: <input type="text" name="" id=""></p>
+                        <p>Food: <input type="text" name="" id="food-expenses"></p>
+                        <p>Rent: <input type="text" name="" id="rent-expenses"></p>
+                        <p>Clothes: <input type="text" name="" id="cloths-expenses"></p>
                     </div>
-                    <button class="calculate-btn">Calculate</button>
+                    <button id="calculate-btn" class="calculate-btn">Calculate</button>
                 </div>
                 <div class="total-container">
-                    <h2>Total Expenses: <span>5500</span></h2>
-                    <h2>Balance: <span>4500</span></h2>
+                    <h2>Total Expenses: <span id="total-expenses">5500</span></h2>
+                    <h2>Balance: <span id="total-balance">4500</span></h2>
                     <div class="save-container">
                         <p>Save: <input type="text" name="" id=""></p>
                         <p>%</p>
@@ -46,9 +45,7 @@
                 </div>
             </div>
         </div>
-
     </section>
-
 
     <script src="js/money.js"></script>
 </body>
